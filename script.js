@@ -65,5 +65,5 @@ if(!reduced){
 }
 
 // Photo selection stays local and keeps every original available in the gallery.
-const photoCaptions={box:'علبة كريم لوميفيرا من الأمام',closed:'عبوة لوميفيرا على قاعدة دائرية بيضاء',open:'عبوة لوميفيرا المفتوحة على قاعدة بيضاء',hand:'يد تحمل عبوة لوميفيرا'};
+const photoCaptions={texture:'صورة مقرّبة لقوام كريم لوميفيرا داخل العبوة',lifestyle:'صورة تحمل فيها عارضة علبة لوميفيرا',closed:'عبوة لوميفيرا على قاعدة دائرية بيضاء',open:'عبوة لوميفيرا المفتوحة على قاعدة بيضاء',hand:'يد تحمل عبوة لوميفيرا'};
 document.querySelectorAll('[data-photo]').forEach(button=>button.addEventListener('click',()=>{const photo=document.querySelector('#product-photo');photo.src='assets/studio-'+button.dataset.photo+'.webp';photo.alt=photoCaptions[button.dataset.photo];document.querySelectorAll('[data-photo]').forEach(x=>{x.classList.toggle('selected',x===button);x.setAttribute('aria-pressed',String(x===button));});}));
