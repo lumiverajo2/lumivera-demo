@@ -11,6 +11,9 @@ function draw() {
   root.style.setProperty('--p', p.toFixed(4));
   root.style.setProperty('--open', o.toFixed(4));
   root.style.setProperty('--lift', l.toFixed(4));
+  const sm = x => { x = Math.max(0, Math.min(1, x)); return x*x*(3-2*x); };
+  root.style.setProperty('--f1', sm(o*2.4).toFixed(4));
+  root.style.setProperty('--f2', sm((o-.18)*2.6).toFixed(4));
   const renderJar = document.querySelector('.realistic-jar');
   const frame = reduced ? 0 : Math.round(Math.max(0, Math.min(1, (p-.32)/.66))*35);
   if(renderJar) renderJar.style.backgroundPosition = ((frame%6)*20)+'% '+(Math.floor(frame/6)*20)+'%';
