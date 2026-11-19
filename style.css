@@ -29,10 +29,16 @@ h1,h2{font-weight:700}h1 em,h2 em{font-weight:500}.price strong{font-weight:500}
 /* Keep gallery focus from scrolling the decorative light beyond its frame. */
 .product-visual{overflow:clip}
 
-/* realistic product render replaces the 3D carton/jar */
-.render-card{position:absolute;left:-40px;top:125px;width:560px;aspect-ratio:16/9;border-radius:30px;overflow:hidden;background:#eef0ee;box-shadow:0 40px 80px #00141066,0 0 0 1px #ffffff22,0 0 90px #b6ca7938;transform:translate(calc(var(--p)*-23vw),calc(var(--p)*30px));z-index:3;isolation:isolate}
-.render-card:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 40px #12333233;pointer-events:none}
-.render-video{display:block;width:100%;height:100%;object-fit:cover}
-.floor-shadow{display:none}
-@media(max-width:760px){.render-card{left:-60px;width:600px}}
-@media(prefers-reduced-motion:reduce){.render-card{transform:none}}
+/* v7: the 3D unboxing wearing the real packaging artwork from the product render */
+.box-world{left:94px;top:133px;width:292px;height:264px}
+.box-front{width:292px;height:264px;transform:translateZ(138px) rotateX(calc(var(--open)*-45deg));background:#5b7677 url('assets/box-front.jpg') center/100% 100% no-repeat;box-shadow:inset 0 0 0 1px #ffffff14,inset 3px 0 4px #ffffff10,inset -3px 0 4px #00000030}
+.box-front:after{content:"";position:absolute;inset:0;background:linear-gradient(112deg,#ffffff1f 0,#ffffff00 38%,#00000026 100%);pointer-events:none}
+.box-front>*{display:none}
+.box-back{width:292px;height:264px;transform:translateZ(-138px);background:linear-gradient(90deg,#3f5758,#2b4243);border:0}
+.box-side{width:276px;height:264px;left:154px;transform:rotateY(-90deg);background:#5b7677 url('assets/box-side.jpg') center/100% 100% no-repeat;border:0;box-shadow:inset 0 0 0 1px #ffffff12}
+.box-side:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#00000038,#00000008 60%,#ffffff10);pointer-events:none}
+.box-bottom{width:292px;height:276px;transform:translateY(126px) rotateX(90deg);background:radial-gradient(ellipse,#3b5354,#223738);box-shadow:inset 0 0 35px #0008}
+.box-lid{width:292px;height:276px;transform:translateZ(-138px) rotateX(calc(90deg + var(--open)*-125deg));background:linear-gradient(35deg,#586f71,#7d9697);border:1px solid #ffffff20;box-shadow:inset 0 0 25px #0000001f;color:#eef2e8}
+.box-lid span{font:700 22px Georgia,serif;letter-spacing:2px;text-shadow:0 1px 2px #0004}
+.realistic-jar{width:245px;height:240px;left:23px;top:20px;background-image:url('assets/jar-render-sprite.webp');background-size:600% 600%;background-repeat:no-repeat;transform:translateY(calc(var(--lift)*-250px)) translateZ(8px) rotateY(calc(23deg - var(--p)*39deg));filter:drop-shadow(0 22px 16px #00140e77);will-change:transform,background-position}
+.realistic-jar{background-position:0 0}
