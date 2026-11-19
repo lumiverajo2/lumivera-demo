@@ -71,3 +71,17 @@ h1,h2{font-weight:700}h1 em,h2 em{font-weight:500}.price strong{font-weight:500}
 .flap-f:before{background:linear-gradient(180deg,#223738,#37524f);box-shadow:inset 0 0 0 1px #ffffff1a}
 .flap-f:after{background:linear-gradient(135deg,#6a8485,#869e9f);box-shadow:inset 0 0 0 1px #ffffff26}
 .flap-l:before,.flap-r:before{background:linear-gradient(135deg,#617b7c,#7b9394)}
+
+/* v7.3: keep the jar and box clear of the headline at every viewport */
+@media(min-width:761px){
+.scene{transform:translate(calc(var(--p)*3vw),calc(var(--p)*40px))}
+.inside-copy{width:36%;right:7%}
+.realistic-jar{transform:translateY(calc(var(--lift)*-215px)) translateZ(8px) rotateY(calc(23deg - var(--p)*39deg))}
+}
+@media(min-width:761px) and (max-width:1000px){
+.scene{transform:translate(calc(var(--p)*2vw),calc(var(--p)*30px)) scale(.68);transform-origin:0 0}
+}
+@media(max-width:760px){
+.scene{transform:translateY(calc(var(--p)*50px)) scale(.62);transform-origin:center 40%}
+.realistic-jar{transform:translateY(calc(var(--lift)*-190px)) translateZ(8px) rotateY(calc(23deg - var(--p)*39deg))}
+}
