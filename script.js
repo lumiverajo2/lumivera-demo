@@ -6,12 +6,8 @@ let scheduled = false;
 function draw() {
   const rect = experience.getBoundingClientRect();
   const p = Math.max(0, Math.min(1, -rect.top / (experience.offsetHeight - innerHeight)));
-  const mob = innerWidth <= 760;
-  const cl = x => Math.max(0, Math.min(1, x));
-  const o = mob ? cl((p - .27) / .32) : cl((p - .09) / .46);
-  const l = mob ? cl((p - .54) / .34) : cl((p - .35) / .5);
-  root.style.setProperty('--mh', cl(1 - (p - .04) / .15).toFixed(4));
-  root.style.setProperty('--mp', (x => x*x*(3-2*x))(cl((p - .2) / .3)).toFixed(4));
+  const o = Math.max(0, Math.min(1, (p - .09) / .46));
+  const l = Math.max(0, Math.min(1, (p - .35) / .5));
   root.style.setProperty('--p', p.toFixed(4));
   root.style.setProperty('--open', o.toFixed(4));
   root.style.setProperty('--lift', l.toFixed(4));
