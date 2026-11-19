@@ -91,6 +91,6 @@ h1,h2{font-weight:700}h1 em,h2 em{font-weight:500}.price strong{font-weight:500}
 .hero-copy{opacity:var(--mh,1)}
 .inside-copy{display:none}
 .scene{transform:translateY(calc(var(--mp)*-125px)) scale(calc(.62 + var(--mp)*.03));transform-origin:center 40%}
-.orbit-a,.orbit-b,.orbit{display:none!important}
+.orbit-a,.orbit-b,.orbit,.floating-chip{display:none!important}
 .kinetic-word{opacity:calc((1 - var(--mp))*.6)}
 }
