@@ -30,7 +30,7 @@ h1,h2{font-weight:700}h1 em,h2 em{font-weight:500}.price strong{font-weight:500}
 .product-visual{overflow:clip}
 
 /* realistic product render replaces the 3D carton/jar */
-.render-card{position:absolute;left:-40px;top:125px;width:560px;aspect-ratio:16/9;border-radius:30px;overflow:hidden;background:#eef0ee;box-shadow:0 40px 80px #00141066,0 0 0 1px #ffffff22,0 0 90px #b6ca7938;transform:translateY(calc(var(--p)*30px)) scale(calc(1 + var(--p)*.04));z-index:3;isolation:isolate}
+.render-card{position:absolute;left:-40px;top:125px;width:560px;aspect-ratio:16/9;border-radius:30px;overflow:hidden;background:#eef0ee;box-shadow:0 40px 80px #00141066,0 0 0 1px #ffffff22,0 0 90px #b6ca7938;transform:translate(calc(var(--p)*-23vw),calc(var(--p)*30px));z-index:3;isolation:isolate}
 .render-card:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 40px #12333233;pointer-events:none}
 .render-video{display:block;width:100%;height:100%;object-fit:cover}
 .floor-shadow{display:none}
